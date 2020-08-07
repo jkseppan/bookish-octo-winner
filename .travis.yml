@@ -10,5 +10,4 @@ install:
   python -mpip install --upgrade pip wheel
   python -mpip install certifi pytest
 script:
-- |
-  python -mpytest
+- python -mpytest test.py
