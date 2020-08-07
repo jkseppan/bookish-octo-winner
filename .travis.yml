@@ -1,0 +1,14 @@
+os: osx
+osx_image: xcode9
+language: generic
+install:
+- |
+  curl -L -O https://www.python.org/ftp/python/3.8.5/python-3.8.5-macosx10.9.pkg
+  sudo installer -package python-3.8.5-macosx10.9.pkg -target /
+  sudo ln -s python3 /usr/local/bin/python
+  hash -r
+  python -mpip install --upgrade pip wheel
+  python -mpip install certifi pytest
+script:
+- |
+  python -mpytest
